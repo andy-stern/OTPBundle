@@ -13,13 +13,13 @@ def formatresult(data: str, mode: str):
 
 def randomencrypt(plaintext: str) -> Tuple[bytes, bytes]:
     key = os.urandom(len(plaintext))
-    plaintextbytes = plaintext.encode("utf-8")
+    plaintextbytes = plaintext.encode()
     ciphertextbytes = bytes([c ^ k for c, k in zip(plaintextbytes, key)])
     return ciphertextbytes, key
 
 def keyencrypt(plaintext: str, key: str) -> bytes:
-    plaintextbytes = plaintext.encode("utf-8")
-    keybytes = key.encode("utf-8")
+    plaintextbytes = plaintext.encode(()
+    keybytes = key.encode()
     ciphertextbytes = bytes([c ^ keybytes[i % len(keybytes)] for i, c in enumerate(plaintextbytes)])
     return ciphertextbytes
 
